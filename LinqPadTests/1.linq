@@ -4,13 +4,13 @@
 
 void Main()
 {
-	//Test("String", 3);	
-	//Test("This is a string exemplification!", 0);
-	Test("Ohh Man God Damn", 7);
-	//Test("Ohh Man God Damnn", 19);
+	Console.WriteLine($"{Test("String", 3) == "nrtgSi"}{Environment.NewLine}"); 	
+	Console.WriteLine($"{Test("This is a string exemplification!", 0) == "This is a string exemplification!"}{Environment.NewLine}");
+	Console.WriteLine($"{Test("Ohh Man God Damn", 7) == "nGOnmohaadhMD"}{Environment.NewLine}");
+	Console.WriteLine($"{Test("Ohh Man God Damnn", 19) == "haG mnad MhO noDn"}{Environment.NewLine}");
 }
 
-private void Test(string str, int times)
+private string Test(string str, int times)
 {
 	Console.WriteLine($"Original : {str}");
 	var chars = str.ToCharArray();
@@ -21,7 +21,9 @@ private void Test(string str, int times)
 		//Console.WriteLine($"{count} : {string.Join(null, chars)}");
 		++count;
 	}
-	Console.WriteLine($"Result : {string.Join(null, chars)}{Environment.NewLine}");
+	str = string.Join(null, chars);
+	Console.WriteLine($"Result : {str}");
+	return str;
 }
 
 private char[] Reversal(char[] chars)
