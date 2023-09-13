@@ -4,7 +4,10 @@
 
 void Main()
 {
-	Test("String", 3);	
+	//Test("String", 3);	
+	//Test("This is a string exemplification!", 0);
+	Test("Ohh Man God Damn", 7);
+	//Test("Ohh Man God Damnn", 19);
 }
 
 private void Test(string str, int times)
@@ -15,10 +18,10 @@ private void Test(string str, int times)
 	while (count <= times)
 	{
 		chars = Reversal(chars);
-		Console.WriteLine($"{count} : {string.Join(null, chars)}");
+		//Console.WriteLine($"{count} : {string.Join(null, chars)}");
 		++count;
-	}	
-	Console.WriteLine($"Result : {string.Join(null, chars)}");
+	}
+	Console.WriteLine($"Result : {string.Join(null, chars)}{Environment.NewLine}");
 }
 
 private char[] Reversal(char[] chars)
