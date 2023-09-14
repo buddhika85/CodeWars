@@ -17,7 +17,8 @@
         2, 3 Length --> 5
         3, 5 Length --> 8  // above street cannot determine this, because the length needs to be 5          
          */
-        public static long OverTheRoad(long address, long n)
+        // Time complexity O(n)
+        public static long OverTheRoadBruteForce(long address, long n)
         {
             var currentLeftAddress = 1;
             var currentRightAddress = 2 * n;
@@ -31,6 +32,19 @@
                 currentLeftAddress += 2;
                 currentRightAddress -= 2;
             }
+        }
+
+        // constant time - O(1)
+        public static long OverTheRoad(long address, long n)
+        {
+            var rightTop = 2 * n;
+            var leftBottom = rightTop - 1;
+
+            if (address % 2 == 0) // is even, in right side
+                return (rightTop - address) + 1;
+
+            // is odd, in left side
+            return (leftBottom - address) + 2;
         }
     }
 }
